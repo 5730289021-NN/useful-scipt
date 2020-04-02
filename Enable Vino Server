@@ -1,0 +1,28 @@
+Here is an ugly 3 steps workaround:
+
+-1) Edit the org.gnome.Vino schema to restore the missing "enabled" parameter (copying from 16.04)
+
+sudo nano /usr/share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
+
+Add this key:
+    <key name='enabled' type='b'>
+      <summary>Enable remote access to the desktop</summary>
+      <description>
+        If true, allows remote access to the desktop via the RFB
+        protocol. Users on remote machines may then connect to the
+        desktop using a VNC viewer.
+      </description>
+      <default>false</default>
+    </key>
+
+-2) Compile the schemas for Gnome:
+
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas
+
+-3) Now the screen sharing panel in unity-control-center works... but this is not enough to get vino running! So you need to add in the programs at session start: Vino-server with the following command line:
+
+/usr/lib/vino/vino-server
+
+Now you can VNC your 18.04-Unity!
+
+https://bugs.launchpad.net/ubuntu/+source/unity-control-center/+bug/1741027/comments/11
