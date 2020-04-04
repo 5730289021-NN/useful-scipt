@@ -1,5 +1,5 @@
 Realsense Linux build from source
 https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md
 
-Install for Jetson
-https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_jetson.md
+Install for Jetson (Jetpack 4.3)
+https://github.com/jetsonhacks/installRealSenseSDK
