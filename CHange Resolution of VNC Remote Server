@@ -1,0 +1,7 @@
+https://askubuntu.com/questions/287096/how-to-change-the-screen-resolution-in-vnc-viewer-for-ubuntu-12-04-without-a-mon
+
+You can change resolution when you connect to monitor-less PC via VNC by executing the following command:
+
+xrandr --fb 1280x1024
+
+Source: http://www.x.org/archive/X11R7.5/doc/man/man1/xrandr.1.html
