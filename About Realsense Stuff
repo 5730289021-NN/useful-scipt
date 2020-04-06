@@ -1,8 +1,13 @@
-Realsense Linux build from source
-https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md
-
-Install for Jetson (Jetpack 4.3)
-https://github.com/jetsonhacks/installRealSenseSDK
 
 Use this one for AGX Xavier Jetpack 4.3
 https://github.com/furushchev/buildLibrealsense2Xavier/tree/32.3.1
+
+Since cv_bridge can't find openCV.. so an easy work around to install realsense-ros is
+sudo apt-get install ros-melodic-realsense2-camera
+
+
+#####Realsense Linux build from source
+#####https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md
+
+#####Install for Jetson (Jetpack 4.3)
+#####https://github.com/jetsonhacks/installRealSenseSDK
