@@ -4,9 +4,7 @@ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31
 
 sudo apt update
 
-sudo apt install ros-melodic-desktop-full ros-melodic-amcl ros-melodic-move-base ros-melodic-dwa-local-planner
-
-sudo apt install ros-melodic-joy ros-melodic-teleop-twist-joy
+sudo apt install ros-melodic-desktop-full ros-melodic-amcl ros-melodic-move-base ros-melodic-dwa-local-planner ros-melodic-joy ros-melodic-teleop-twist-joy
 
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
