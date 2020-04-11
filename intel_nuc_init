@@ -1,0 +1,33 @@
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+
+sudo apt update
+
+sudo apt install ros-melodic-desktop-full ros-melodic-amcl ros-melodic-move-base ros-melodic-dwa-local-planner ros-melodic-joy ros-melodic-teleop-twist-joy
+
+echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+
+source ~/.bashrc
+
+sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential python3-catkin-pkg-modules python3-rospkg-modules python3-empy
+
+sudo rosdep init
+rosdep update
+
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+git clone https://github.com/ros/geometry2 && \
+git clone https://github.com/SICKAG/sick_scan && \
+git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git && \
+git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git && \
+git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+
+
+cd ~/catkin_ws/
+catkin_make --cmake-args \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DPYTHON_EXECUTABLE=/usr/bin/python3 \
+            -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m \
+            -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so
