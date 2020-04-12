@@ -1,5 +1,6 @@
 #OpenSSH
 sudo apt install openssh-server
+#Set using Settings/Sharing
 
 #ROS Installation
 
