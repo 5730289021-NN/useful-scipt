@@ -14,8 +14,8 @@ sudo apt install ros-melodic-desktop-full ros-melodic-amcl ros-melodic-move-base
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 #ROS_MASTER_IP
-echo "ROS_MASTER_URI=http://10.61.5.4:11311"
-echo "ROS_HOSTNAME=10.61.5.4"
+echo "ROS_MASTER_URI=http://10.61.5.4:11311" >> ~/.bashrc
+echo "ROS_HOSTNAME=10.61.5.4" >> ~/.bashrc
 
 source ~/.bashrc
 
