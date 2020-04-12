@@ -13,7 +13,7 @@ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 source ~/.bashrc
 
-sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential python3-catkin-pkg-modules python3-rospkg-modules python3-empy python3-numpy
+sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential python3-catkin-pkg-modules python3-rospkg-modules python3-empy python3-numpy python3-serial
 
 sudo rosdep init
 rosdep update
