@@ -34,7 +34,8 @@ git clone https://github.com/ros/geometry2 && \
 git clone https://github.com/SICKAG/sick_scan && \
 git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git && \
 git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git && \
-git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git && \
+git clone https://github.com/clearpathrobotics/robot_upstart
 
 
 #Set SSH-RSA Key
@@ -69,7 +70,23 @@ KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", KERNELS==\"0005:054C:05C4.*\", MODE=
 KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", ATTRS{idVendor}==\"054c\", ATTRS{idProduct}==\"09cc\", MODE=\"0666\"
 KERNEL==\"hidraw*\", SUBSYSTEM==\"hidraw\", KERNELS==\"0005:054C:09CC.*\", MODE=\"0666\"" >> /etc/udev/rules.d/50-ds4drv.rules'
 
+sudo adduser sofa dialout
+
+
+
+sudo bash -c 'echo "KERNEL==\"ttyUSB*\",MODE=\"0666\"" >> >> /etc/udev/rules.d/66-tty.rules'
+
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
-sudo adduser sofa dialout
+#Robot Upstart
+rosrun robot_upstart install --interface=wlp0s20f3 --master=http://10.61.5.111:11311 --user=sofa sofa/launch/release/sofa_release.launch --symlink
+sudo nano /usr/sbin/sofa-start #add 'source /opt/ros/melodic/setup.bash' before 'source ~/catkin_ws/devel/setup.bash' 
+
+
+sudo systemctl daemon-reload && sudo systemctl start sofa
+service sofa status
+
+
+
+
