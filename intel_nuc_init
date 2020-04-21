@@ -81,8 +81,9 @@ sudo udevadm trigger
 
 #Robot Upstart
 rosrun robot_upstart install --interface=wlp0s20f3 --master=http://10.61.5.111:11311 --user=sofa sofa/launch/release/sofa_release.launch --symlink
-sudo nano /usr/sbin/sofa-start #add 'source /opt/ros/melodic/setup.bash' before 'source ~/catkin_ws/devel/setup.bash' 
-
+sudo nano /usr/sbin/sofa-start 
+#add 'source /opt/ros/melodic/setup.bash' before 'source ~/catkin_ws/devel/setup.bash' 
+#add 'sleep 10' to delay 10 sec before doing anything (Wifi Connection Issue)
 
 sudo systemctl daemon-reload && sudo systemctl start sofa
 service sofa status
