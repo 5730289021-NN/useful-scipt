@@ -37,6 +37,8 @@ git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git && \
 git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git && \
 git clone https://github.com/clearpathrobotics/robot_upstart
 
+roscd geometry2
+git checkout melodic-devel
 
 #Set SSH-RSA Key
 ssh-keygen -t rsa -b 4096 -C "your@email.com"
