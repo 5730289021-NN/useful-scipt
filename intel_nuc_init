@@ -10,7 +10,7 @@ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31
 
 sudo apt update
 
-sudo apt install ros-melodic-desktop-full ros-melodic-amcl ros-melodic-gmapping ros-melodic-move-base ros-melodic-dwa-local-planner ros-melodic-joy ros-melodic-teleop-twist-joy ros-melodic-map-server
+sudo apt install ros-melodic-desktop-full ros-melodic-amcl ros-melodic-gmapping ros-melodic-move-base ros-melodic-dwa-local-planner ros-melodic-joy ros-melodic-teleop-twist-joy ros-melodic-map-server ros-melodic-rosbridge-server
 
 #ROS_MASTER_IP
 echo "export ROS_MASTER_URI=http://10.61.5.4:11311" >> ~/.bashrc
